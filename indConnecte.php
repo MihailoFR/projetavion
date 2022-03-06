@@ -217,7 +217,6 @@
                                             <div class="form-group">
                                                 <label>Heure de départ :</label><br/>
                                                 <input type="time" name="heure_depart"><br/>
-                                                </input>
                                             </div>
                                             <div class="form-group">
                                                 <span class="select-arrow"></span>
@@ -237,7 +236,6 @@
                                             <div class="form-group">
                                                 <label>Heure d'arrivée :</label>
                                                 <input type="time" name="heure_arrivee" ><br/>
-                                                </input>
                                             </div>
                                             <div class="form-btn">
                                                 <button class="submit-btn">Valider</button>
@@ -271,7 +269,6 @@
                                                     </tr>
                                                 <?php } ?>
                                                 </tbody>
-                                                </thead>
                                             </table>
                                         </div>
                                     </form>
@@ -345,16 +342,97 @@
 
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio">
-    <div class="container">
 
-        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-            <h2>Mettre a jour un vol</h2>
+    <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h2>Mettre a jour un vol</h2>
+        <p> </p>
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+        <!-- Custom stlylesheet -->
+        <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         </div>
+        <body>
+        <form action="update.php" method="post">
+            <div id="booking" class="section">
+                <div class="section-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="booking-form">
+                                <form>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <div class="section-title">
+                                                <h2>Entrez un nouveau vol </h2>
+                                                <label for="id_vol">Saisissez le ID du vol que vous souhaitez supprimer :</label><br/>
+                                                <input type="text" name="id_vol"><br/>
+                                                <label for="date_depart">Date de départ :</label><br/>
+                                                <input type="date" name="date_depart"><br/>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="select-arrow"></span>
+                                                <span class="form-label">Choisir le pilote :</span>
+                                                <select class="form-control" name="ref_pilote" id="ref_pilote">
+                                                    <option></option>
+                                                    <?php
+                                                    $req = $bdd->getBdd()->query('SELECT * FROM pilote');
+                                                    while($res=$req->fetch()){
+                                                        ?>
+                                                        <option value="<?php echo $res['id_pilote'];?>"><?php echo $res['id_pilote']." ".$res['nom']." ".$res['prenom']?> </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
 
-
-
-    </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Heure de départ :</label><br/>
+                                                <input type="time" name="heure_depart"><br/>
+                                                </input>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="select-arrow"></span>
+                                                <span class="form-label">id Avion</span>
+                                                <select class="form-control" name="ref_avion" id="ref_avion">
+                                                    <option></option>
+                                                    <?php
+                                                    $req = $bdd->getBdd()->query('SELECT * FROM avion');
+                                                    while($res=$req->fetch()){
+                                                        ?>
+                                                        <option value="<?php echo $res['id_avion'];?>"><?php echo $res['id_avion'].". ".$res['nom']?> </option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Heure d'arrivée :</label>
+                                                <input type="time" name="heure_arrivee" ><br/>
+                                                </input>
+                                            </div>
+                                            <div class="form-btn">
+                                                <button class="submit-btn">Valider</button>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                </form>
+                            </div>
+</section>
+</main>
+</div>
+</div>
+</body>
 </section><!-- End Portfolio Section -->
 
 
@@ -366,21 +444,15 @@
         <div class="section-title" data-aos="fade-in" data-aos-delay="100">
             <h2>Supprimer un vol</h2>
                 <p> </p>
-                <form action="supprimer.php" method="post"
+            <form action="supprimer.php" method="post"
                 <h2>Veille entre le ID du vol que vous souhaitez supprimer : </h2>
                 <input name="id_vol" type="text">
-                <button type="submit" name="idToDelete" value="id_vol">Supprimer</button>
-            </div>
+                <button type="submit" name="id_vol" value="id_vol">Supprimer</button>
         </div>
-        </form>
-            </form>
         </div>
     </div>
 
 
-
-
-    </div>
 </section><!-- End Team Section -->
 
 <!-- ======= Contact Section ======= -->
@@ -395,9 +467,12 @@
         <a href="Deconnexion.php" target="_blank" class="swiper-button-disabled">Deconnexion</a>
     </div>
 
+</section>
 
 
 
+
+<section>
         <div class="section-title">
             <h2>Contact</h2>
             <p>Heures d’ouvertures : 07H00 tous les jours, sauf dérogation.
@@ -559,6 +634,6 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
-</body>
+</div>
 
-</html>
+</div>

@@ -241,14 +241,6 @@ $bdd = new bdd();
                                           <button class="submit-btn">Valider</button>
                                       </div>
                                   </div>
-                                      <div class="form-group">
-                                          <div class="section-title">
-                                              <form action="update.php"
-                                              <h2>Entrez un nouveau vol </h2>
-                                              <label for="date_depart">Date de départ :</label><br/>
-                                              <input type="date" name="date_depart"><br/>
-                                          </div>
-
                                   <p></p>
                                   <div class="col-md-12">
                                       <table id="myTable">
@@ -479,7 +471,7 @@ $bdd = new bdd();
                 <br> <input type="submit" name="Valider"> </br>
             </form>
             <p>Pas de compte? Vous pouvez vous inscrire en cliquant sur inscription</p>
-            <li class="menu-item"><a href="Inscription.html">Inscription</a></li>
+            <li class="menu-item"><a href="inscriptionn.php">Inscription</a></li>
 
 
             </form>
