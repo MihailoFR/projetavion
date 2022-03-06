@@ -7,7 +7,7 @@
         'heure_depart'=> $_POST['heure_depart'],
         'heure_arrivee'=> $_POST['heure_arrivee'],
         'ref_pilote'=> $_POST['ref_pilote'],
-        'ref_avion'=> $_POST['ref_avion']));
-
+        'ref_avion'=> $_POST['ref_avion'],
+        'id_vol'=> $_POST['id_vol']));
 
 ?>
