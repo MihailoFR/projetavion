@@ -374,8 +374,8 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <div class="section-title">
-                                                <h2>Entrez un nouveau vol </h2>
-                                                <label for="id_vol">Saisissez le ID du vol que vous souhaitez supprimer :</label><br/>
+                                                <h2>Modifiez un vol </h2>
+                                                <label for="id_vol">Saisissez le ID du vol que vous souhaitez modifier :</label><br/>
                                                 <input type="text" name="id_vol"><br/>
                                                 <label for="date_depart">Date de départ :</label><br/>
                                                 <input type="date" name="date_depart"><br/>
@@ -445,12 +445,19 @@
             <h2>Supprimer un vol</h2>
                 <p> </p>
             <form action="supprimer.php" method="post"
-                <h2>Veille entre le ID du vol que vous souhaitez supprimer : </h2>
-                <input name="id_vol" type="text">
-                <button type="submit" name="id_vol" value="id_vol">Supprimer</button>
+            <h2>Veille entre le ID du vol que vous souhaitez supprimer : <input name="id_vol" type="text"></h2>
+            <button class="submit-btn">Supprimer</button>
         </div>
         </div>
     </div>
+</section>
+
+</main>
+</div>
+</div>
+</body>
+</section><!-- End Portfolio Section -->
+
 
 
 </section><!-- End Team Section -->
@@ -462,8 +469,9 @@
 
         <div class="section-title">
         <h2>Bienvenue <?php echo $_SESSION['nom_utilisateur']?></h2>
-        <p> Vous pouvez ainsi modifier votre compte </p>
-
+        <p> Vous pouvez ainsi modifier votre compte en cliquant sur modifier </p>
+        <p><a href="modifier.php" target="_blank" class="swiper-button-disabled">Modifier</a></p>
+        <p>Ou bien deconnecter vous</p>
         <a href="Deconnexion.php" target="_blank" class="swiper-button-disabled">Deconnexion</a>
     </div>
 
@@ -517,17 +525,17 @@
                 <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nom" required>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Nom" >
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Mail" required>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Mail" >
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" >
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message" ></textarea>
                     </div>
                     <div class="my-3">
                         <div class="loading">Loading</div>
